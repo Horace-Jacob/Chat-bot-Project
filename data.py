@@ -1,0 +1,182 @@
+import json
+
+data = {"intents": [
+    {"tag": "greeting",
+     "patterns": ["Hi", "How are you", "Is anyone there?", "Hello", "Good day", "Whats up"],
+     "responses": ["Hello!", "Good to see you again!", "Hi there, how can I help?"],
+     "context_set": ""
+     },
+    {"tag": "goodbye",
+     "patterns": ["cya", "See you later", "Goodbye", "I am Leaving", "Have a Good day", "bye", "bye"],
+     "responses": ["Sad to see you go", "Talk to you later", "Goodbye!"],
+     "context_set": ""
+     },
+    {"tag": "name",
+     "patterns": ["what is your name?", "what can i call you?"],
+     "responses": ["I am Lilac chat bot developed by Lwin Oo Naing", "You can call me Lilac"],
+     "context_set": ""
+     },
+    {"tag": "operations",
+     "patterns": ["What can i ask you?", "what can you do for me?", "what do you serve?"],
+     "responses": ["You can ask me facts about AI, machine learning and deep learning and robots?"],
+     "context_set": ""
+     },
+    {"tag": "AI",
+     "patterns": ["What is AI?", "What is artificial intelligence?", "what does AI mean?", "What does AI means?",
+                  "AI?"],
+     "responses": [
+         "Artificial intelligence (AI) refers to the simulation of human intelligence in machines that are programmed to think like humans and mimic their actions",
+         "Artificial Intelligence (AI) may also be applied to any machine that exhibits traits associated with a human mind such as learning and problem-solving."],
+     "context_set": ""
+     },
+    {"tag": "languages_AI",
+     "patterns": ["What programming languages are used to develop AI?",
+                  "What programming languages are used to develop artificial intelligence?",
+                  "Programming languages for AI?",
+                  "What kind of programming languages are used to develop AI?",
+                  "What kind of programming languages are used to develop artificial intelligence?"],
+     "responses": [
+         "Java, Python, Lisp, Prolog, and C++ are major AI programming languages used for artificial intelligence capable of satisfying different needs in the development and designing of different software",
+         "There are so many languages that can be used to develop AI. Majors are python, java, LISP, C++ and Prolog.",
+         "Python, LISP, C++, java and prolog are majors."],
+     "context_set": ""
+     },
+    {"tag": "recommend_AI",
+     "patterns": ["What programming language do you recommend for AI development?",
+                  "What programming languages should I use for AI?", "what do you recommend for AI development?",
+                  "Can I get recommendation for AI?", "Recommendation for AI?", "Recommendation for AI development."],
+     "responses": [
+         "Python might be the best tool to develop AI because it is easy to use and it has so many libraries for AI development.",
+         "Python will be the best for AI due to the easy-to-use syntax and useful libraries for AI."],
+     "context_set": ""
+     },
+    {"tag": "machine_learning",
+     "patterns": ["what is machine learning?", "what is the definition of machine learning",
+                  "how to define machine learning?"],
+     "responses": [
+         "Machine learning is a subset of artificial intelligence (AI) that provides systems the ability to automatically learn and improve from experience without being explicitly programmed",
+         "Machine learning focuses on the development of computer programs that can access data and use it learn for themselves"],
+     "context_set": ""
+     },
+    {"tag": "examples_ML",
+     "patterns": ["Examples for machine learning?", "what are the examples for machine learning?",
+                  "what are the example applications for machine learning?",
+                  "what are the example applications of ML?"],
+     "responses": [
+         "Medical diagnosis, image processing, prediction, classification, learning association, regression etc",
+         "Image processing, text classification and you can find more on https://insights.daffodilsw.com/blog/9-machine-learning-examples-from-day-to-day-life"],
+     "context_set": ""
+     },
+    {"tag": "examples_AI",
+     "patterns": ["Examples for AI?", "what are the examples for AI?",
+                  "what are the example applications for AI?",
+                  "what are the example applications of AI?",
+                  "Examples for artificial intelligence?", "what are the examples for artificial intelligence?",
+                  "what are the example applications for artificial intelligence?",
+                  "what are the example applications of AI?"
+                  ],
+     "responses": [
+         "Face detection and recognition, text editors or autocorrect, search and recommendation algorithms and so on",
+         "Self-driving cars, face detection and recognition and you can find more on https://www.iotforall.com/8-helpful-everyday-examples-of-artificial-intelligence"],
+     "context_set": ""
+     },
+    {"tag": "recommend_ML",
+     "patterns": ["What programming language do you recommend for machine learning development?",
+                  "What programming languages should I use for ML?",
+                  "what do you recommend for machine learning development?",
+                  "Can I get recommendation for machine learning?", "Recommendation for ML?",
+                  "Recommendation for ML development."],
+     "responses": [
+         "Python might be the best tool to develop ML because it is easy to use and it has so many libraries for ML development.",
+         "Python will be the best for ML due to the easy-to-use syntax and useful libraries for ML."],
+     "context_set": ""
+     },
+    {"tag": "languages_ML",
+     "patterns": ["What programming languages are used to develop machine learning?",
+                  "What programming languages are used to develop AI?", "Programming languages for ML?",
+                  "What kind of programming languages are used to develop ML?",
+                  "What kind of programming languages are used to develop machine learning?"],
+     "responses": [
+         "Java, JavaScript,Python, Lisp, Julia, and R are major ML programming languages used for machine learning capable of satisfying different needs in the development and designing of different software",
+         "There are so many languages that can be used to develop ML. Majors are python, java, LISP, JavaScript, R and Julia.",
+         "Python, java, LISP, JavaScript, R and Julia are majors."],
+     "context_set": ""
+     },
+    {"tag": "DL",
+     "patterns": ["what is deep learning?", "what is the definition of deep learning",
+                  "how to define deep learning?"],
+     "responses": [
+         "Deep learning is a subset of machine learning where artificial neural networks, algorithms inspired by the human brain, learn from large amounts of data",
+         "Deep learning allows machines to solve complex problems even when using a data set that is very diverse, unstructured and inter-connected"],
+     "context_set": ""
+     },
+    {"tag": "examples_DL",
+     "patterns": ["Examples for deep learning?", "what are the examples for deep learning?",
+                  "what are the example applications for deep learning?",
+                  "what are the example applications of DL?"],
+     "responses": [
+         "Deep learning utilizes both structured and unstructured data for training. Practical examples of Deep learning are Virtual assistants, vision for driverless cars, money laundering, face recognition and many more",
+         "Image captioning, text classification and you can find more on https://www.analyticssteps.com/blogs/deep-learning-overview-practical-examples-popular-algorithms"],
+     "context_set": ""
+     },
+    {"tag": "languages_DL",
+     "patterns": ["What programming languages are used to develop deep learning?",
+                  "What programming languages are used to develop DL?", "Programming languages for DL?",
+                  "What kind of programming languages are used to develop DL?",
+                  "What kind of programming languages are used to develop deep learning?"],
+     "responses": [
+         "Java, JavaScript,Python, Lisp, Julia, and R are major DL programming languages used for deep learning capable of satisfying different needs in the development and designing of different software",
+         "There are so many languages that can be used to develop DL. Majors are python, java, LISP, JavaScript, R and Julia.",
+         "Python, java, LISP, JavaScript, R and Julia are majors."],
+     "context_set": ""
+     },
+    {"tag": "recommend_DL",
+     "patterns": ["What programming language do you recommend for deep learning development?",
+                  "What programming languages should I use for DL?",
+                  "what do you recommend for deep learning development?",
+                  "Can I get recommendation for deep learning?", "Recommendation for DL?",
+                  "Recommendation for ML development."],
+     "responses": [
+         "Python might be the best tool to develop DL because it is easy to use and it has so many libraries for DL development.",
+         "Python will be the best for DL due to the easy-to-use syntax and useful libraries for DL like tensorflow, keras and pytorch."],
+     "context_set": ""
+     },
+    {"tag": "robots",
+     "patterns": ["what is robot?", "what are robots", "what does robot mean?"],
+     "responses": [
+         "Robot is a machine resembling a human being and able to replicate certain human movements and functions automatically",
+         "Robot, any automatically operated machine that replaces human effort, though it may not resemble human beings in appearance or perform functions in a human-like manner"],
+     "context_set": ""
+     },
+    {"tag": "examples_robots",
+     "patterns": ["Examples for robots?", "what are the examples for robots?"],
+     "responses": [
+         "Robot Dog, Sophia, AI-powered robot assistants"],
+     "context_set": ""
+     },
+    {"tag": "languages_robots",
+     "patterns": ["What programming languages are used to develop robots?",
+                  "Programming languages for robots?",
+                  "What kind of programming languages are used to develop robots?"],
+     "responses": [
+         "C++ and C are major programming languages used to develop robots.",
+         "There are so many languages that can be used to develop robots. Majors are C++ and C.",
+         "C and C++ are majors."],
+     "context_set": ""
+     },
+    {"tag": "recommend_robots",
+     "patterns": ["What programming language do you recommend for robots development?",
+                  "What programming languages should I use to develop robots?",
+                  "what do you recommend for robot development?",
+                  "Can I get recommendation for robot development?", "Recommendation for robot development?",
+                  "Recommendation for ML development."],
+     "responses": [
+         "C++ might be the best tool to develop robot.",
+         "C++ will be the best for robots."],
+     "context_set": ""
+     }
+]
+}
+
+with open("data.json", "w") as write_file:
+    json.dump(data, write_file, indent=4)
